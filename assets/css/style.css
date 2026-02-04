@@ -1,12 +1,12 @@
 :root {
     /* --- Paleta Acadêmica & Natural --- */
-    --verde-imperial: #1B3A2F;   /* Verde escuro */
-    --verde-musgo: #2F4F2F;      /* Verde médio */
-    --verde-claro: #4A6C4A;      /* Verde folha */
-    --terracota: #BC5A36;        /* Destaque quente */
-    --dourado: #D4A356;          /* Detalhes nobres */
+    --verde-imperial: #1B3A2F; 
+    --verde-musgo: #2F4F2F;    
+    --verde-claro: #4A6C4A;    
+    --terracota: #BC5A36;   
+    --dourado: #D4A356;   
     
-    --fundo-papel: #F9F7F2;      /* Off-white (creme) */
+    --fundo-papel: #F9F7F2;      
     --branco: #FFFFFF;
     --cinza-texto: #333333;
     --cinza-borda: #E0DDD5;
@@ -91,7 +91,7 @@ img { max-width: 100%; display: block; }
 .hero h1 { color: var(--branco); font-size: 2.5rem; margin: 0; }
 .tagline { color: var(--dourado); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; display: block; margin-bottom: 10px; }
 
-/* --- ESTILOS DA HOME (CAPA) --- */
+/* --- ESTILOS DA HOME --- */
 .landing-hero {
     height: 85vh;
     background: linear-gradient(rgba(27, 58, 47, 0.7), rgba(89, 64, 48, 0.7)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1920');
@@ -126,7 +126,7 @@ img { max-width: 100%; display: block; }
 .menu-card:hover { transform: translateY(-10px); }
 .card-icon { font-size: 2.5rem; margin-bottom: 15px; display: block; }
 
-/* --- ACERVO (GRID) --- */
+/* --- ACERVO --- */
 .grid-museu {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

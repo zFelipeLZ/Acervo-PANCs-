@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // Lista de Plantas (Dados)
     const acervo = [
         {
             nome: "Ora-pro-nóbis",
@@ -32,11 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
-    // Seleciona a DIV do HTML
     const galeria = document.getElementById('galeria-grid');
 
-    // Só executa se a galeria existir na página (evita erro na Home)
-    if (galeria) {
+       if (galeria) {
         acervo.forEach(planta => {
             const card = document.createElement('article');
             card.className = 'card-peca';
