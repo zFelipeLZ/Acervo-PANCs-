@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Painel de Gestão - Museu PANC</title>
+    <link rel="stylesheet" href="assets\css\style.css">
+</head>
+
+<body>
+    <nav class="main-nav">
+        <a href="index.html" class="nav-logo">Acervo PANC's</a>
+        <div class="nav-links">
+            <a href="index.html">Acervo</a>
+            <a href="dashboard.html" class="active">Painel de Dados</a>
+            <a href="mapa.html">Território</a>
+            <a href="curiosidades.html">Saberes</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>Painel de Monitoramento</h1>
+        <p>Dados sobre a preservação e consumo das espécies no território.</p>
+        <br>
+
+        <div class="dashboard-grid">
+            <div class="kpi-card">
+                <span class="kpi-value">42</span>
+                <span class="kpi-label">Espécies Catalogadas</span>
+            </div>
+            <div class="kpi-card">
+                <span class="kpi-value">150kg</span>
+                <span class="kpi-label">Colheita Mensal (Média)</span>
+            </div>
+            <div class="kpi-card">
+                <span class="kpi-value">28</span>
+                <span class="kpi-label">Famílias Produtoras</span>
+            </div>
+            <div class="kpi-card" style="border-left-color: var(--verde-musgo);">
+                <span class="kpi-value">12</span>
+                <span class="kpi-label">Oficinas Realizadas</span>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h3>Espécies mais consumidas (Último Semestre)</h3>
+            <br>
+
+            <div class="bar-chart-item">
+                <div class="bar-label"><span>Ora-pro-nóbis</span> <span>85%</span></div>
+                <div class="bar-bg">
+                    <div class="bar-fill" style="width: 85%;"></div>
+                </div>
+            </div>
+
+            <div class="bar-chart-item">
+                <div class="bar-label"><span>Taioba</span> <span>60%</span></div>
+                <div class="bar-bg">
+                    <div class="bar-fill" style="width: 60%;"></div>
+                </div>
+            </div>
+
+            <div class="bar-chart-item">
+                <div class="bar-label"><span>Peixinho-da-horta</span> <span>45%</span></div>
+                <div class="bar-bg">
+                    <div class="bar-fill" style="width: 45%;"></div>
+                </div>
+            </div>
+
+            <div class="bar-chart-item">
+                <div class="bar-label"><span>Vinagreira</span> <span>30%</span></div>
+                <div class="bar-bg">
+                    <div class="bar-fill" style="width: 30%;"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; © 2026 Museu Virtual PANC - Saberes Ancestrais</p>
+    </footer>
+
+    <script src="assets/script/script.js"></script>
+</body>
+
+</html>
