@@ -35,14 +35,67 @@
     </header>
 
     <main class="container">
-        <div id="galeria-grid" class="grid-museu"></div>
+        <div class="search-container">
+            <input type="text" id="plant-search" list="plantas-lista"
+                placeholder="Pesquise por nome (ex: Ora-pro-nóbis)...">
+            <datalist id="plantas-lista">
+                <option value="Ora-pro-nóbis">
+                <option value="Peixinho-da-horta">
+                <option value="Taioba">
+                <option value="Vinagreira">
+            </datalist>
+            <button class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        </header>
+
+        <div class="grid-museu">
+            <article class="card-peca" id="ora-pro-nobis">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1627821636750-8b4507024c08?auto=format&fit=crop&q=80&w=400"
+                        alt="Ora-pro-nóbis">
+                </div>
+                <div class="conteudo-card">
+                    <span class="tag-categoria">Proteica</span>
+                    <span class="nome-cientifico">Pereskia aculeata</span>
+                    <h3>Ora-pro-nóbis</h3>
+                    <p>Pilar da culinária local, rica em proteínas e essencial na medicina tradicional.</p>
+                    <a href="../paginas\page1.html" class="btn-detalhes">Acessar Ficha</a>
+                </div>
+            </article>
+
+            <article class="card-peca" id="peixinho">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1667838538740-4246995034c2?auto=format&fit=crop&q=80&w=400"
+                        alt="Peixinho-da-horta">
+                </div>
+                <div class="conteudo-card">
+                    <span class="tag-categoria">PANC</span>
+                    <span class="nome-cientifico">Stachys byzantina</span>
+                    <h3>Peixinho-da-horta</h3>
+                    <p>Folhas aveludadas que trazem o sabor do mar para o interior do quilombo.</p>
+                    <a href="#" class="btn-detalhes">Acessar Ficha</a>
+                </div>
+            </article>
+
+            <article class="card-peca" id="taioba">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1594313013289-54d922987a04?auto=format&fit=crop&q=80&w=400"
+                        alt="Taioba">
+                </div>
+                <div class="conteudo-card">
+                    <span class="tag-categoria">Tubérculo</span>
+                    <span class="nome-cientifico">Xanthosoma sagittifolium</span>
+                    <h3>Taioba</h3>
+                    <p>Símbolo de resistência, exige maestria no preparo de suas folhas largas.</p>
+                    <a href="#" class="btn-detalhes">Acessar Ficha</a>
+                </div>
+            </article>
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2026 Museu Virtual PANC - Preservação Cultural.</p>
     </footer>
-
-    <script src="../assets\script\script.js"></script>
 </body>
 
 </html>
