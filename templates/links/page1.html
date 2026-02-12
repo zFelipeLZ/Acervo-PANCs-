@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acervo: Ora-pro-nóbis - Museu PANC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/1f0b7d6794.js" crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/card.css' %}">
+</head>
+
+    <body>
+    <section class="grid-acervo">
+        {% for panc in pancs %}
+        <article class="card-peca">
+            <div class="img-container">
+                {% if panc.foto %}
+                    <img src="{{ panc.foto.url }}" alt="{{ panc.nome_comum }}">
+                {% endif %}
+            </div>
+            <div class="conteudo-card">
+                <span class="tag-categoria">{{ panc.categoria }}</span>
+                <span class="nome-cientifico">{{ panc.nome_cientifico }}</span>
+                <h3>{{ panc.nome_comum }}</h3>
+                <p>{{ panc.descricao_curta }}</p>
+                
+                <a href="{% url 'detalhes' panc.pk %}" class="btn-detalhes">Acessar Ficha</a>
+            </div>
+        </article>
+        {% empty %}
+        <p>Nenhuma planta cadastrada no momento.</p>
+        {% endfor %}
+    </section>
+    {% endblock %}
+    <footer style="text-align: center; padding: 2rem; background: var(--verde-musgo); color: white; margin-top: 40px;">
+        <p>Museu Virtual PANC &copy; 2026 - Preservando a Memória</p>
+    </footer>
+
+</body>
+
+</html>

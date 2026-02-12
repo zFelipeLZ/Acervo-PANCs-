@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Acervo - Museu Virtual PANC</title>
+    <link rel="stylesheet" href="/static/assets/css/style.css"> 
+    <script src="https://kit.fontawesome.com/1f0b7d6794.js" crossorigin="anonymous"></script>
+    </head>
+
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <span class="tagline">Memória & Ancestralidade</span>
+            <h1>Catálogo de Espécies</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="search-container">
+            <form action="{% url 'acervo_lista' %}" method="GET" style="display: flex; width: 100%;">
+                <input type="text" 
+                       name="q" 
+                       id="plant-search" 
+                       list="plantas-lista"
+                       value="{{ request.GET.q|default:'' }}"
+                       placeholder="Pesquise por nome (ex: Ora-pro-nóbis)...">
+                
+                <datalist id="plantas-lista">
+                    {% for p in sugestoes %}
+                        <option value="{{ p.nome_comum }}">
+                    {% endfor %}
+                </datalist>
+
+                <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+
+        <div class="grid-museu">
+            {% for panc in pancs %}
+            <article class="card-peca">
+                <div class="img-container">
+                    {% if panc.foto_capa %}
+                        <img src="{{ panc.foto_capa.url }}" alt="{{ panc.nome_comum }}">
+                    {% else %}
+                        <img src="https://via.placeholder.com/400" alt="Sem imagem">
+                    {% endif %}
+                </div>
+                <div class="conteudo-card">
+                    <span class="tag-categoria">{{ panc.categoria.nome }}</span>
+                    <span class="nome-cientifico"><em>{{ panc.nome_cientifico }}</em></span>
+                    <h3>{{ panc.nome_comum }}</h3>
+                    <p>{{ panc.descricao_curta }}</p>
+                    
+                    <a href="#" class="btn-detalhes">Acessar Ficha</a>
+                </div>
+            </article>
+            {% empty %}
+                <p>Nenhuma espécie encontrada com esse nome.</p>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Museu Virtual PANC - Preservação Cultural.</p>
+    </footer>
+</body>
+</html>

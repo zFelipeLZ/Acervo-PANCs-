@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -11,46 +12,54 @@
     <linkb
         href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-        <link rel="stylesheet" href="../templates/css/style.css">
+        <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
 </head>
 
 <body>
+    {% extends 'base.html' %}
+    {% load static %}
 
+    {% block title %}Museu Virtual PANC - Início{% endblock %}
+
+    {% block content %}
     <header class="landing-hero">
-        <span style="color: var(--dourado); letter-spacing: 3px; font-weight: bold; text-transform: uppercase;">Projeto
-            de Preservação</span>
+        <span style="color: var(--dourado); letter-spacing: 3px; font-weight: bold; text-transform: uppercase;">
+            Projeto de Preservação
+        </span>
         <h1>Museu Virtual PANC</h1>
-        <p style="font-size: 1.2rem; max-width: 700px; margin-top: 10px;">Resgatando a história, a biologia e a cultura
-            alimentar do nosso Quilombo.</p>
+        <p style="font-size: 1.2rem; max-width: 700px; margin-top: 10px;">
+            Resgatando a história, a biologia e a cultura alimentar do nosso Quilombo.
+        </p>
     </header>
 
     <main class="container">
         <nav class="menu-grid">
-            <a href="acervo.html" class="menu-card">
+            <a href="{% url 'acervo' %}" class="menu-card">
                 <i class="fa-solid fa-book fa-2xl"></i>
                 <h3><br>Acervo Digital</h3>
                 <p>Catálogo completo com fotos e fichas técnicas.</p>
             </a>
 
-            <a href="mapa.html" class="menu-card">
+            <a href="{% url 'mapa' %}" class="menu-card">
                 <i class="fa-solid fa-map fa-2xl"></i>
                 <h3><br>Território</h3>
                 <p>Geografia afetiva e locais de cultivo.</p>
             </a>
 
-            <a href="dashboard.html" class="menu-card">
+            <a href="{% url 'dashboard' %}" class="menu-card">
                 <i class="fa-solid fa-chart-simple fa-2xl"></i>
                 <h3><br>Painel de Dados</h3>
                 <p>Estatísticas de produção e consumo.</p>
             </a>
 
-            <a href="curiosidades.html" class="menu-card">
+            <a href="{% url 'curiosidades' %}" class="menu-card">
                 <i class="fa-solid fa-lightbulb fa-2xl"></i>
                 <h3><br>Saberes</h3>
-                <p>Histórias, receitas e usos medicinais.</p>
+                <p>Curiosidades e medicina tradicional.</p>
             </a>
         </nav>
     </main>
+    {% endblock %}
 
     <footer>
         <p>&copy; 2026 Museu Virtual PANC - Conectando Raízes e Futuro.</p>
